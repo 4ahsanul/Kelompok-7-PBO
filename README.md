@@ -6,4 +6,4 @@ Alwi Syahrul (Project Leader),
 Khanif Rahma (GUI Desain),
 Wahyu Fajaruloh (Analyst)
 Filfimo Yulfis Ahsanul Hulqi (Programmer 1).
-Eko Yanuarso Budi (Programmer 2),
+Eko Yanuarso Budi (Programmer 2).
