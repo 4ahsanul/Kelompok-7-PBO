@@ -1,9 +1,9 @@
 # Kelompok-7-PBO
 Untuk memenuhi tugas akhir PBO semster 4
-Disini kami memncoba membuat sebuah program untuk Quiz atau Exam Mangament dengan bahasa Java
+Disini kami dari kelompok 7 dengan nama "Anteloop" memncoba membuat sebuah program untuk Quiz atau Exam Mangament dengan bahasa Java
 Berikut adalah anggota kelompok kami
-Alwi Syahrul (Project Leader),
-Khanif Rahma (GUI Desain),
-Wahyu Fajaruloh (Analyst)
-Filfimo Yulfis Ahsanul Hulqi (Programmer 1).
-Eko Yanuarso Budi (Programmer 2).
+Alwi Syahrul Falah (19102037) sebagai Project Leader,
+Khanif Rahmah F.S (19102020) sebagai GUI Design,
+Wahyu Fajaruloh (19102164) sebagai Data Analyst,
+Filfimo Yulfis Ahsanul Hulqi (19102143) sebagai Programmer 1,
+Eko Yanuarso Budi (19102124) sebagai Programmer 2.
