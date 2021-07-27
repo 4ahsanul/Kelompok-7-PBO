@@ -5,6 +5,9 @@
  */
 package Antarmuka;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Khanif Rahma
@@ -16,6 +19,7 @@ public class BuatKelas extends javax.swing.JFrame {
      */
     public BuatKelas() {
         initComponents();
+        layarTengah();
     }
 
     /**
@@ -222,4 +226,15 @@ public class BuatKelas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }

@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package Antarmuka;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  *
@@ -16,6 +19,7 @@ public class LoginGuru extends javax.swing.JFrame {
      */
     public LoginGuru() {
         initComponents();
+        layarTengah();
     }
 
     /**
@@ -28,8 +32,6 @@ public class LoginGuru extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         bBuatKuis = new javax.swing.JButton();
         bKuisku = new javax.swing.JButton();
@@ -43,43 +45,15 @@ public class LoginGuru extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(153, 255, 51));
         jPanel3.setPreferredSize(new java.awt.Dimension(441, 49));
 
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("X");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 26)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("-");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 650, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addContainerGap())
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 213, 87));
@@ -196,14 +170,6 @@ public class LoginGuru extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void bKuiskuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKuiskuActionPerformed
         // TODO add your handling code here:
         setVisible(false);
@@ -276,9 +242,18 @@ public class LoginGuru extends javax.swing.JFrame {
     private javax.swing.JButton bKuisku;
     private javax.swing.JButton bPengaturan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }

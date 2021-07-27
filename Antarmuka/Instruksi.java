@@ -5,6 +5,8 @@
  */
 package Antarmuka;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +21,7 @@ public String nip;
      */
     public Instruksi() {
         initComponents();
+        layarTengah();
     }
     
     public Instruksi(String nip1) {
@@ -47,7 +50,6 @@ public String nip;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 213, 87));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setBackground(new java.awt.Color(80, 203, 147));
         jTextArea1.setColumns(20);
@@ -55,8 +57,6 @@ public String nip;
         jTextArea1.setRows(5);
         jTextArea1.setText("1. Silahkan mengerjakan soal dengan baik dan benar\n\n2. Dapat membuka buku atau internet untuk membantu mencari jawaban\n\n3. Segala bentuk kecurangan akan dikenai sanksi berupa pengurangan nilai\n\n4. Harap kerjakan seluruh soal terlebih dahulu, kemudian submit, karena saat sudah \n    tersubmit maka jawaban akan terkumpul dan tidak bisa diulangi lagi\n\n5. Jawaban akan otomatis dikumpulkan dan keluar dari ujian, jika waktu sudah habis\n\nJumlah Soal \t: 10\nWaktu \t: 10 Menit\nSemoga Beruntung!");
         jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 107, 672, 330));
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 51));
 
@@ -84,12 +84,9 @@ public String nip;
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(84, 67, 107));
         jLabel1.setText("INSTRUKSI PENGERJAAN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 51));
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
@@ -99,7 +96,33 @@ public String nip;
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 450, 130, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(546, 546, 546)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jButton1))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +132,7 @@ public String nip;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -171,4 +194,16 @@ public String nip;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
+    
 }

@@ -3,29 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package Antarmuka;
 
 import java.sql.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import Koneksi.KoneksiDB;
+import Koneksi.ConnectionProvider;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  *
  * @author Khanif Rahma
  */
 public class BuatKuis_Guru extends javax.swing.JFrame {
-    public String kodeKuis;
+//    public String kodeKuis;
     /**
      * Creates new form SimpanKuis_Guru
      */
     public BuatKuis_Guru() {
         initComponents();
+        layarTengah();
         
         
         //buat id question
         try{
-            Connection con = KoneksiDB.getCon();
+            Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("select count(id) from question");
             
@@ -44,9 +47,9 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         }
     }
     
-    public BuatKuis_Guru(String jKuis){
-        fJudulKuis.setText(jKuis);
-    }
+//    public BuatKuis_Guru(String jKuis){
+//        fJudulKuis.setText(jKuis);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,17 +66,10 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         fQuestion = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        fScore = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        fJudulKuis = new javax.swing.JTextField();
-        fkodeKuis = new javax.swing.JTextField();
         fMapel = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         bClear = new javax.swing.JButton();
@@ -109,7 +105,7 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(bBack)
                 .addContainerGap())
         );
@@ -128,10 +124,6 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("A.");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 51));
-        jButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jButton1.setText("Gambar");
-
         fQuestion.setFont(new java.awt.Font("Tw Cen MT", 0, 16)); // NOI18N
         fQuestion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -139,45 +131,12 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("B.");
 
-        fScore.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        fScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fScore.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fScoreActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jLabel1.setText("Skor                   :");
-
         jLabel9.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Jawaban Benar  :");
 
-        jLabel14.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jLabel14.setText("Kode Kuis          :");
-
         jLabel15.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabel15.setText("Soal                  :");
-
-        jLabel16.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jLabel16.setText("Judul Kuis          :");
-
-        fJudulKuis.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        fJudulKuis.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fJudulKuis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fJudulKuisActionPerformed(evt);
-            }
-        });
-
-        fkodeKuis.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        fkodeKuis.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        fkodeKuis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fkodeKuisActionPerformed(evt);
-            }
-        });
 
         fMapel.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         fMapel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -218,82 +177,58 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(bSave)))
+                        .addGap(18, 18, 18)
+                        .addComponent(bClear))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fJudulKuis)
+                            .addComponent(fMapel)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(fkodeKuis, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(fMapel)))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(fQuestionID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(209, 209, 209)
-                            .addComponent(jButton1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(36, 36, 36)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(fQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fQuestionID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
                                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(fOptA)
-                                        .addComponent(fOptB)
-                                        .addComponent(fOptC)
-                                        .addComponent(fOptD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(fQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(fScore, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bSave)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bClear))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(fAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 120, Short.MAX_VALUE)))))
+                                            .addComponent(fAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(fOptA)
+                                                .addComponent(fOptB)
+                                                .addComponent(fOptC)
+                                                .addComponent(fOptD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(0, 2, Short.MAX_VALUE)))))
                 .addGap(27, 27, 27))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fJudulKuis, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fQuestionID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fkodeKuis, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(fQuestionID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
                 .addComponent(fQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(fOptA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -309,14 +244,12 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(fOptD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(fAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                .addGap(68, 68, 68)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fScore, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bClear)
                     .addComponent(bSave))
                 .addGap(26, 26, 26))
@@ -344,18 +277,6 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fMapelActionPerformed
 
-    private void fkodeKuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fkodeKuisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fkodeKuisActionPerformed
-
-    private void fJudulKuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fJudulKuisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fJudulKuisActionPerformed
-
-    private void fScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fScoreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fScoreActionPerformed
-
     private void bClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClearActionPerformed
         // TODO add your handling code here:
         
@@ -365,15 +286,15 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         fOptC.setText("");
         fOptD.setText("");
         fAnswer.setText("");
-        fScore.setText("");
+//        fScore.setText("");
     }//GEN-LAST:event_bClearActionPerformed
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
         // TODO add your handling code here:
         
         String id=fQuestionID.getText();
-        String jKuis = fJudulKuis.getText();
-        String kodeKuis = fkodeKuis.getText();
+//        String jKuis = fJudulKuis.getText();
+//        String kodeKuis = fkodeKuis.getText();
         String mapel = fMapel.getText();
         String question = fQuestion.getText(); 
         String optA = fOptA.getText(); 
@@ -381,31 +302,26 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
         String optC = fOptC.getText(); 
         String optD = fOptD.getText(); 
         String answer = fAnswer.getText();
-        String score = fScore.getText();
+//        String score = fScore.getText();
         
         try{
-            Connection con = KoneksiDB.getCon();
+            Connection con = ConnectionProvider.getCon();
             
-            PreparedStatement ps = con.prepareStatement("insert into question values(?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("insert into question values(?,?,?,?,?,?,?,?)");
             ps.setString(1, id);
-            ps.setString(2, jKuis);
-            ps.setString(3, kodeKuis);
-            ps.setString(4, mapel);
-            ps.setString(5, question);
-            ps.setString(6, optA);
-            ps.setString(7, optB);
-            ps.setString(8, optC);
-            ps.setString(9, optD);
-            ps.setString(10, answer);
-            ps.setString(11, score);
+            ps.setString(2, mapel);
+            ps.setString(3, question);
+            ps.setString(4, optA);
+            ps.setString(5, optB);
+            ps.setString(6, optC);
+            ps.setString(7, optD);
+            ps.setString(8, answer);
             ps.executeUpdate();
             JFrame jf = new JFrame();
             jf.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(jf, "Sukses mengupdate");
             setVisible(false);
             new BuatKuis_Guru().setVisible(true);
-            fJudulKuis.setText(jKuis);
-            fkodeKuis.setText(kodeKuis);
             fMapel.setText(mapel);
         }catch(Exception e){
             JFrame jf = new JFrame();
@@ -463,7 +379,6 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
     private javax.swing.JButton bClear;
     private javax.swing.JButton bSave;
     private javax.swing.JTextField fAnswer;
-    private javax.swing.JTextField fJudulKuis;
     private javax.swing.JTextField fMapel;
     private javax.swing.JTextField fOptA;
     private javax.swing.JTextField fOptB;
@@ -471,13 +386,7 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
     private javax.swing.JTextField fOptD;
     private javax.swing.JTextField fQuestion;
     private javax.swing.JTextField fQuestionID;
-    private javax.swing.JTextField fScore;
-    private javax.swing.JTextField fkodeKuis;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -487,4 +396,15 @@ public class BuatKuis_Guru extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }

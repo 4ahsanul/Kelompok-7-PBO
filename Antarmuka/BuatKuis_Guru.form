@@ -61,7 +61,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="9" max="32767" attributes="0"/>
                   <Component id="bBack" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -93,70 +93,53 @@
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel9" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="bSave" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="bClear" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fJudulKuis" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="fkodeKuis" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                               <Component id="fMapel" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="fQuestionID" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="65" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel2" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                                              <Component id="jLabel7" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="fQuestion" min="-2" pref="411" max="-2" attributes="0"/>
+                                      <Component id="fQuestionID" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel2" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                                  <Component id="jLabel4" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                                  <Component id="jLabel7" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel8" alignment="1" min="-2" pref="26" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabel8" alignment="1" min="-2" pref="26" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="fOptA" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="fOptB" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="fOptC" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="fOptD" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="fAnswer" min="-2" pref="296" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="fOptA" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="fOptB" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="fOptC" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="fOptD" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="fQuestion" alignment="0" min="-2" pref="411" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel9" max="32767" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="fScore" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="bSave" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="bClear" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="fAnswer" min="-2" pref="296" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -168,31 +151,19 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel16" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="fJudulKuis" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace pref="74" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel17" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="fMapel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel14" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="fkodeKuis" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel15" min="-2" pref="22" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fQuestionID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel15" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="fQuestion" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fOptA" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -212,15 +183,13 @@
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fOptD" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="fAnswer" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="fScore" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="bClear" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -257,17 +226,6 @@
             <Property name="text" type="java.lang.String" value="A."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Gambar"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="fQuestion">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -285,25 +243,6 @@
             <Property name="text" type="java.lang.String" value="B."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="fScore">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fScoreActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Skor                   :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -313,14 +252,6 @@
             <Property name="text" type="java.lang.String" value="Jawaban Benar  :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Kode Kuis          :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -328,36 +259,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Soal                  :"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel16">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Judul Kuis          :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="fJudulKuis">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fJudulKuisActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="fkodeKuis">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tw Cen MT" size="18" style="0"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fkodeKuisActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="fMapel">
           <Properties>

@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package Antarmuka;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  *
@@ -16,6 +19,7 @@ public class Pengaturan_Guru extends javax.swing.JFrame {
      */
     public Pengaturan_Guru() {
         initComponents();
+        layarTengah();
         fText.setEditable(false);
     }
 
@@ -166,4 +170,15 @@ public class Pengaturan_Guru extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }

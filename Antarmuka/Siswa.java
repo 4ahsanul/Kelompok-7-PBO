@@ -8,6 +8,8 @@ package Antarmuka;
 import java.sql.*;
 import Koneksi.ConnectionProvider;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
@@ -23,6 +25,7 @@ public class Siswa extends javax.swing.JFrame {
      */
     public Siswa() {
         initComponents();
+        layarTengah();
         SimpleDateFormat dFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         jLabel3.setText(dFormat.format(date));
@@ -44,13 +47,14 @@ public class Siswa extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         bClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 213, 87));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setBackground(new java.awt.Color(255, 255, 51));
         jButton2.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
@@ -60,17 +64,15 @@ public class Siswa extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 365, 170, 33));
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(84, 67, 107));
         jLabel1.setText("Selamat Datang!");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
         jTextField3.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("Nama Kamu");
+        jTextField3.setText("Nama Lengkap");
         jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField3FocusGained(evt);
@@ -84,12 +86,11 @@ public class Siswa extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 244, 37));
 
         jTextField4.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("NIP");
+        jTextField4.setText("Email");
         jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField4FocusGained(evt);
@@ -103,15 +104,95 @@ public class Siswa extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 244, 37));
 
         jLabel2.setForeground(new java.awt.Color(84, 67, 107));
         jLabel2.setText("Tanggal :");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(84, 67, 107));
         jLabel3.setText("jLabel3");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
+
+        jTextField5.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField5.setText("Jenis Kelamin");
+        jTextField5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField5FocusLost(evt);
+            }
+        });
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.setText("NIS");
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField6FocusLost(evt);
+            }
+        });
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(460, 460, 460)
+                        .addComponent(jLabel2)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(403, 403, 403)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(4, 4, 4)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 51));
 
@@ -129,8 +210,9 @@ public class Siswa extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(bClose))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bClose)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,14 +226,16 @@ public class Siswa extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -167,7 +251,7 @@ public class Siswa extends javax.swing.JFrame {
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
         // TODO add your handling code here:
-        if(jTextField3.getText().equals("Nama Kamu")){
+        if(jTextField3.getText().equals("Nama Lengkap")){
             jTextField3.setText("");
             jTextField3.setForeground(new Color(0,0,0));
         }
@@ -175,7 +259,7 @@ public class Siswa extends javax.swing.JFrame {
 
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
         // TODO add your handling code here:
-        if(jTextField4.getText().equals("NIP")){
+        if(jTextField4.getText().equals("Email")){
             jTextField4.setText("");
             jTextField4.setForeground(new Color(0,0,0));
         }
@@ -184,7 +268,7 @@ public class Siswa extends javax.swing.JFrame {
     private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
         // TODO add your handling code here:
         if(jTextField3.getText().equals("")){
-            jTextField3.setText("Nama Kamu");
+            jTextField3.setText("Nama Lengkap");
             jTextField3.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_jTextField3FocusLost
@@ -192,7 +276,7 @@ public class Siswa extends javax.swing.JFrame {
     private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
         // TODO add your handling code here:
         if(jTextField4.getText().equals("")){
-            jTextField4.setText("NIP");
+            jTextField4.setText("Email");
             jTextField4.setForeground(new Color(153,153,153));
         }
     }//GEN-LAST:event_jTextField4FocusLost
@@ -206,17 +290,21 @@ public class Siswa extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String nama = jTextField3.getText();
-        String nip = jTextField4.getText();
+        String email = jTextField4.getText();
+        String jk = jTextField5.getText();
+        String nip = jTextField6.getText();
         String marks = "0";
         
         //Penanganan try-catch
         //Blok try
         try{
             Connection con = ConnectionProvider.getCon();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO student values (?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO siswa values (?,?,?,?,?)");
             ps.setString(1, nama);
-            ps.setString(2, nip);
-            ps.setString(3, marks);
+            ps.setString(2, jk);
+            ps.setString(3, nip);
+            ps.setString(4, email);
+            ps.setString(5, marks);
             ps.executeUpdate();
             setVisible(false);
             new Instruksi(nip).setVisible(true);
@@ -228,6 +316,46 @@ public class Siswa extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
+        // TODO add your handling code here:
+        if(jTextField5.getText().equals("Jenis Kelamin")){
+            jTextField5.setText("");
+            jTextField5.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_jTextField5FocusGained
+
+    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
+        // TODO add your handling code here:
+        if(jTextField5.getText().equals("")){
+            jTextField5.setText("Jenis Kelamin");
+            jTextField5.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_jTextField5FocusLost
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
+        // TODO add your handling code here:
+        if(jTextField6.getText().equals("NIS")){
+            jTextField6.setText("");
+            jTextField6.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_jTextField6FocusGained
+
+    private void jTextField6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusLost
+        // TODO add your handling code here:
+        if(jTextField6.getText().equals("")){
+            jTextField6.setText("NIS");
+            jTextField6.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_jTextField6FocusLost
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,5 +403,18 @@ public class Siswa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }
