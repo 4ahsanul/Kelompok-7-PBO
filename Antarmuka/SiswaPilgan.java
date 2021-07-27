@@ -75,6 +75,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
             ResultSet rsl = st.executeQuery("SELECT * FROM question where id='"+questionId+"'");
             while(rsl.next()){
                 jLabel3.setText(rsl.getString(1));
+                //DISINI PAK
                 jTextField1.setText(rsl.getString(2));
                 jRadioButton1.setText(rsl.getString(3));
                 jRadioButton2.setText(rsl.getString(4));
@@ -98,7 +99,8 @@ public class SiswaPilgan extends javax.swing.JFrame {
             st.executeUpdate("UPDATE student set marks ='"+marks+"' where nip ='"+nip+"'");
             String marks1 = String.valueOf(marks);
                     
-            JOptionPane.showMessageDialog(null, marks1);
+            setVisible(false);
+            new JawabanTerkirim(marks1).setVisible(true);
             
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -159,10 +161,10 @@ public class SiswaPilgan extends javax.swing.JFrame {
                 jLabel14.setText(String.valueOf(sec));
                 jLabel11.setText(String.valueOf(min));
                 
-                if(sec == 60){
+                if(sec == 6){
                     sec = 0;
                     min++;
-                    if(min == 10){
+                    if(min == 1){
                         time.stop();
                         answerCheck();
                         submit();
@@ -265,8 +267,8 @@ public class SiswaPilgan extends javax.swing.JFrame {
         jLabel2.setText("A.");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 26, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tw Cen MT", 0, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(84, 67, 107));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Question Demo?");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -312,7 +314,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton1.setForeground(new java.awt.Color(84, 67, 107));
         jRadioButton1.setText("Tulis Pilihan Jawaban");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,7 +325,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton2.setForeground(new java.awt.Color(84, 67, 107));
         jRadioButton2.setText("Tulis Pilihan Jawaban");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,7 +336,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton3.setForeground(new java.awt.Color(84, 67, 107));
         jRadioButton3.setText("Tulis Pilihan Jawaban");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,7 +347,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
 
         jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton4.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton4.setForeground(new java.awt.Color(84, 67, 107));
         jRadioButton4.setText("Tulis Pilihan Jawaban");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -421,7 +423,7 @@ public class SiswaPilgan extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
