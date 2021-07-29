@@ -7,8 +7,6 @@ package Antarmuka;
 
 import java.sql.*;
 import Koneksi.ConnectionProvider;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,7 +20,6 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
-        layarTengah();
     }
 
     /**
@@ -373,15 +370,4 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-
-    void layarTengah(){
-    // mengambil ukuran layar
-        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-
-        // membuat titik x dan y
-        int x = layar.width / 2  - this.getSize().width / 2;
-        int y = layar.height / 2 - this.getSize().height / 2;
-
-        this.setLocation(x, y);
-    }
 }
