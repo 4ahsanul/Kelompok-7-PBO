@@ -133,8 +133,11 @@
             <Component class="javax.swing.JTextArea" name="fText">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tw Cen MT" size="14" style="1"/>
+                </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Lorem ipsum ........."/>
+                <Property name="text" type="java.lang.String" value="Kami mengumpulkan informasi dari Anda ketika Anda mendaftar pada aplikasi ini,&#xa;masuk ke akun Anda, melakukan input data, ikut dalam kontes, dan/atau ketika&#xa;Anda keluar. Data yang dikumpulkan mencakup nama Anda, alamat email, nomor telepon, &#xa;dan nomer perusahaan.&#xa;&#xa;Selain itu, kami menerima dan merekam informasi secara otomatis dari komputer dan &#xa;peramban Anda, termasuk alamat IP Anda, perlengakapan perangkat keras &#xa;dan lunak Anda, dan halaman yang Anda minta.&#xa;&#xa;Segala informasi yang kami kumpulkan dari Anda dapat digunakan untuk:&#xa;&#xa;Personalisasi pengalaman dan tanggapan Anda sesuai kebutuhan pribadi Anda&#xa;Menyediakan konten yang disesuaikan&#xa;Meningkatkan kunjungan aplikasi kami&#xa;Meningkatkan layanan pelanggan dan mendukung kebutuhan Anda&#xa;Menghubungi Anda lewat email&#xa;Mengatur kontes, atau survei"/>
               </Properties>
             </Component>
           </SubComponents>
