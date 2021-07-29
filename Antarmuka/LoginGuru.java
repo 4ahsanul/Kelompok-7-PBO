@@ -78,7 +78,7 @@ public class LoginGuru extends javax.swing.JFrame {
 
         bPengaturan.setBackground(new java.awt.Color(255, 255, 51));
         bPengaturan.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        bPengaturan.setText("Pengaturan");
+        bPengaturan.setText("Kebijakan");
         bPengaturan.setPreferredSize(new java.awt.Dimension(67, 29));
         bPengaturan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

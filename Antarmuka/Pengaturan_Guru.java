@@ -65,7 +65,7 @@ public class Pengaturan_Guru extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 213, 87));
@@ -75,8 +75,9 @@ public class Pengaturan_Guru extends javax.swing.JFrame {
         jLabel1.setText("Guru");
 
         fText.setColumns(20);
+        fText.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         fText.setRows(5);
-        fText.setText("Lorem ipsum .........");
+        fText.setText("Kami mengumpulkan informasi dari Anda ketika Anda mendaftar pada aplikasi ini,\nmasuk ke akun Anda, melakukan input data, ikut dalam kontes, dan/atau ketika\nAnda keluar. Data yang dikumpulkan mencakup nama Anda, alamat email, nomor telepon, \ndan nomer perusahaan.\n\nSelain itu, kami menerima dan merekam informasi secara otomatis dari komputer dan \nperamban Anda, termasuk alamat IP Anda, perlengakapan perangkat keras \ndan lunak Anda, dan halaman yang Anda minta.\n\nSegala informasi yang kami kumpulkan dari Anda dapat digunakan untuk:\n\nPersonalisasi pengalaman dan tanggapan Anda sesuai kebutuhan pribadi Anda\nMenyediakan konten yang disesuaikan\nMeningkatkan kunjungan aplikasi kami\nMeningkatkan layanan pelanggan dan mendukung kebutuhan Anda\nMenghubungi Anda lewat email\nMengatur kontes, atau survei");
         jScrollPane1.setViewportView(fText);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);

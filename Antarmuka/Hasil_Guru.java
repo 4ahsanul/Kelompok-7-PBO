@@ -196,7 +196,7 @@ public class Hasil_Guru extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void tabelData() {
-        String[] judul = {"Nama","Jenis Kelamin","NIP","Email","Score"};
+        String[] judul = {"Nama","Jenis Kelamin","NIS","Email","Score"};
         model = new DefaultTableModel(judul,0);
         tdata.setModel(model);
         String sql = "SELECT * FROM siswa";
