@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jul 2021 pada 05.57
+-- Waktu pembuatan: 30 Jul 2021 pada 01.47
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.11
 
@@ -94,8 +94,8 @@ CREATE TABLE `question` (
 
 INSERT INTO `question` (`id`, `judulkuis`, `kodekuis`, `mapel`, `soal`, `optA`, `optB`, `optC`, `optD`, `answer`, `score`) VALUES
 (1, 'Latihan 5', '12345', 'Seni Budaya', 'Apa itu NFT?', 'Non Fungible Token', 'Non Fisible Token', 'Non Fisik Token', 'Non Fungible Transfer', 'Non Fungible Token', '10'),
-(2, 'Latihan 5', '12346', 'Seni Budaya', 'Apa itu NFT?', 'Non Fungible Token', 'Non Fisible Token', 'Non Fisik Token', 'Non Fungible Transfer', 'Non Fungible Token', '10'),
-(3, 'Latihan 5', '12347', 'Seni Budaya', 'Apa itu NFT?', 'Non Fungible Token', 'Non Fisible Token', 'Non Fisik Token', 'Non Fungible Transfer', 'Non Fungible Token', '10');
+(2, 'Latihan 5', '12345', 'Seni Budaya', 'Apa itu NFT?', 'Non Fungible Token', 'Non Fisible Token', 'Non Fisik Token', 'Non Fungible Transfer', 'Non Fungible Token', '10'),
+(3, 'Latihan 5', '12345', 'Seni Budaya', 'Apa itu NFT?', 'Non Fungible Token', 'Non Fisible Token', 'Non Fisik Token', 'Non Fungible Transfer', 'Non Fungible Token', '10');
 
 -- --------------------------------------------------------
 
