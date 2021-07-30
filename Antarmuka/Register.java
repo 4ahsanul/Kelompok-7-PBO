@@ -7,6 +7,8 @@ package Antarmuka;
 
 import java.sql.*;
 import Koneksi.ConnectionProvider;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +22,7 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
+        layarTengah();
     }
 
     /**
@@ -37,7 +40,6 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fid = new javax.swing.JTextField();
-        fjk = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         fNohp = new javax.swing.JTextField();
@@ -49,6 +51,7 @@ public class Register extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         fNama = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,14 +87,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        fjk.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        fjk.setText("  ");
-        fjk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fjkActionPerformed(evt);
-            }
-        });
-
         jLabel11.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel11.setText("Jenis Kelamin        :");
 
@@ -99,7 +94,6 @@ public class Register extends javax.swing.JFrame {
         jLabel12.setText("Nomor Hp            :");
 
         fNohp.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        fNohp.setText("  ");
         fNohp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fNohpActionPerformed(evt);
@@ -131,7 +125,6 @@ public class Register extends javax.swing.JFrame {
         });
 
         fEmail.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        fEmail.setText("  ");
         fEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fEmailActionPerformed(evt);
@@ -142,7 +135,6 @@ public class Register extends javax.swing.JFrame {
         jLabel14.setText("Email                   :");
 
         fNama.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-        fNama.setText("  ");
         fNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fNamaActionPerformed(evt);
@@ -151,6 +143,9 @@ public class Register extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel7.setText("No.Id                   :");
+
+        jComboBox1.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -174,11 +169,11 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(bRegister, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                             .addComponent(jLabel11)
-                                            .addGap(12, 12, 12)
-                                            .addComponent(fjk, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                             .addComponent(jLabel12)
                                             .addGap(12, 12, 12)
@@ -214,10 +209,10 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(13, 13, 13)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(fjk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -267,7 +262,7 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
         String id = fid.getText();
         String nama = fNama.getText();
-        String jk = fjk.getText();
+        String jk = (String)jComboBox1.getSelectedItem();
         String noHp = fNohp.getText();
         String email = fEmail.getText();
         String password = fPass.getText();
@@ -297,10 +292,6 @@ public class Register extends javax.swing.JFrame {
     private void fNohpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fNohpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fNohpActionPerformed
-
-    private void fjkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fjkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fjkActionPerformed
 
     private void fidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fidActionPerformed
         // TODO add your handling code here:
@@ -358,7 +349,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField fNohp;
     private javax.swing.JPasswordField fPass;
     private javax.swing.JTextField fid;
-    private javax.swing.JTextField fjk;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -370,4 +361,15 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    void layarTengah(){
+    // mengambil ukuran layar
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+    }
 }
